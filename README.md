@@ -80,13 +80,102 @@ user@machine: clang++ -Werror -Weverything -Wall -pedantic -pedantic-errors -std
 user@machine: g++ -Werror -Wall -pedantic -pedantic-errors -std=c++11 -o3 <source>
 ```
 
-## Benchmarks & Performance
+## Recommended Interface(s)
 
-At the time of writing, there was a simple main that was written to test for bugs. However, the functions themselves have not been performance tested, or checked for memory leaks. There will be, hopefully, a report coming soon
+Sorting requires certain operators to be overloaded for compilation.
+In this context, Type refers to the Type in the set, and Index refers
+to the Indexing type.
+
+### Type Requirements
+
+This interface should be implemented when designing a user-defined type; 
+class or struct.
+
+```c++
+
+const Type& operator= (const Type& rightHandSide);
+
+bool operator== (const Type& rightHandSide);
+bool operator<  (const Type& rightHandSide);
+bool operator>  (const Type& rightHandSide);
+bool operator<= (const Type& rightHandSide);
+
+```
+
+### Index Requirements
+
+This interface should be implemented when designing a user-defined indexing
+type if one wishes to do so; 
+class or struct.
+
+```c++
+const Index& operator= (const Index& rightHandSize);
+const Index& operator= (const <Integral Type>& rightHandSide);
+
+bool operator== (const Index& rightHandSide);
+bool operator<  (const Index& rightHandSide);
+bool operator>  (const Index& rightHandSide);
+bool operator<= (const Index& rightHandSide);
+bool operator>= (const Index& rightHandSide);
+
+const Index& operator+ (const Index& rightHandSide);
+const Index& operator- (const Index& rightHandSide);
+const Index& operator+ (const <Integral Type>& rightHandSide);
+const Index& operator- (const <Integral Type>& rightHandSide);
+
+const Index& operator-- ();
+const Index& operator++ ();
+
+Type& operator[] (const Index& rightHandSide);
+Type& operator[] (const <Integral Type>& rightHandSide);
+
+const Type& operator[] (const Index& rightHandSide);
+const Type& operator[] (const <Integral Type>& rightHandSide);
+
+```
+
+Alternatively, one can use c++'s built-in primitives or fixed-width integer types.
+
+```c++
+
+// Built-in
+unsigned short ;
+unsigned int   ; 
+unsigned long  ;
+
+signed short ;
+signed int   ;
+signed long  ;
+
+// Fixed-Width
+uint16_t;
+uint32_t;
+uint64_t;
+
+int16_t;
+int32_t;
+int64_t;
+
+```
+
+## Asymptotic Analysis
+
+### Bubble Sort
+
+### Selection Sort
+
+### Insertion Sort
+
+### Comb Sort
+
+### Quick Sort
+
+### Merge Sort
+
 
 ## Additional Notes
 
-There was plenty of time poured into making this as readable as possible, as well as worthy for practical use. Understandably, there are other libraries out there that include better implementations for sorting; this was more of a test-run of 'production' code and a thought exercise. This by no means is a definitive list of sorting algorithms, or authority on performance or implementation. 
+There was plenty of time poured into making this as readable as possible, as well as worthy for practical use.This by no means is a definitive list of sorting algorithms, or authority on performance or implementation. 
 
 Comments, Questions, Concerns etc.. are welcomed.
 

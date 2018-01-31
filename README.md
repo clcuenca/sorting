@@ -93,12 +93,11 @@ class or struct.
 
 ```c++
 
-const Type& operator= (const Type& rightHandSide);
-
-bool operator== (const Type& rightHandSide);
-bool operator<  (const Type& rightHandSide);
-bool operator>  (const Type& rightHandSide);
-bool operator<= (const Type& rightHandSide);
+Type& operator=  (const Type& rightHandSide);
+bool  operator== (const Type& rightHandSide);
+bool  operator<  (const Type& rightHandSide);
+bool  operator>  (const Type& rightHandSide);
+bool  operator<= (const Type& rightHandSide);
 
 ```
 
@@ -109,8 +108,8 @@ type if one wishes to do so;
 class or struct.
 
 ```c++
-const Index& operator= (const Index& rightHandSize);
-const Index& operator= (const <Integral Type>& rightHandSide);
+Index& operator= (const Index& rightHandSize);
+Index& operator= (const <Integral Type>& rightHandSide);
 
 bool operator== (const Index& rightHandSide);
 bool operator<  (const Index& rightHandSide);
@@ -118,13 +117,13 @@ bool operator>  (const Index& rightHandSide);
 bool operator<= (const Index& rightHandSide);
 bool operator>= (const Index& rightHandSide);
 
-const Index& operator+ (const Index& rightHandSide);
-const Index& operator- (const Index& rightHandSide);
-const Index& operator+ (const <Integral Type>& rightHandSide);
-const Index& operator- (const <Integral Type>& rightHandSide);
+Index operator+ (const Index& rightHandSide);
+Index operator- (const Index& rightHandSide);
+Index operator+ (const <Integral Type>& rightHandSide);
+Index operator- (const <Integral Type>& rightHandSide);
 
-const Index& operator-- ();
-const Index& operator++ ();
+Index& operator-- ();
+Index& operator++ ();
 
 Type& operator[] (const Index& rightHandSide);
 Type& operator[] (const <Integral Type>& rightHandSide);
@@ -134,11 +133,11 @@ const Type& operator[] (const <Integral Type>& rightHandSide);
 
 ```
 
-Alternatively, one can use c++'s built-in primitives or fixed-width integer types.
+Alternatively, one can use c++'s primitives or fixed-width integer types.
 
 ```c++
 
-// Built-in
+// Standard
 unsigned short ;
 unsigned int   ; 
 unsigned long  ;

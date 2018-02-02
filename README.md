@@ -157,21 +157,6 @@ int64_t;
 
 ```
 
-## Asymptotic Analysis
-
-### Bubble Sort
-
-### Selection Sort
-
-### Insertion Sort
-
-### Comb Sort
-
-### Quick Sort
-
-### Merge Sort
-
-
 ## Additional Notes
 
 There was plenty of time poured into making this as readable as possible, as well as worthy for practical use.This by no means is a definitive list of sorting algorithms, or authority on performance or implementation. 

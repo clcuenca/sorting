@@ -98,6 +98,7 @@ bool  operator== (const Type& rightHandSide);
 bool  operator<  (const Type& rightHandSide);
 bool  operator>  (const Type& rightHandSide);
 bool  operator<= (const Type& rightHandSide);
+bool  operator>= (const Type& rightHandSide);
 
 ```
 

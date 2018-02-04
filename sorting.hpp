@@ -66,12 +66,14 @@ namespace Sorting {
 // Elements - amount of elements in the array
 // Return: pointer to the sorted array
 template <typename Type, typename Index>
-Type* Sorting::bubbleSort(Type* const set, Index elements){
+Type* Sorting::bubbleSort
+(Type* const set, Index elements){
 
     // Swap Flag
     bool swapped = false;
 
-    do{
+    // Loop while we swapped
+    while(swapped){
 
 	// Reset the swap flag
 	swapped = false;
@@ -91,8 +93,7 @@ Type* Sorting::bubbleSort(Type* const set, Index elements){
 
             }
         }
-
-    }while(swapped);
+    }
 
     // Finally, return the sorted set
     return set;

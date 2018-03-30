@@ -70,7 +70,7 @@ Type* Sorting::bubbleSort
 (Type* const set, Index elements){
 
     // Swap Flag
-    bool swapped = false;
+    bool swapped = true;
 
     // Loop while we swapped
     while(swapped){
